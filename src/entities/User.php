@@ -1,4 +1,7 @@
 <?php
+
+namespace App\entities;
+
 class User {
   private $email;
   private $password;
