@@ -15,15 +15,20 @@ $estante="teste";
 ?>
 
 <div class="container mt-4">
-  <form method="POST" action="">
+  <form method="POST" action="../../src/utils/productOperations.php">
     <legend>Editar produto de ID <?=$id?></legend>
 
     <?php formProduto($nome, $preco, $estoque, $fornecedor, $estante) ?>
+    <input type="hidden" name="id" value="<?=$id?>" />
 
     <div class="row">
       <div class="col">
-        <button type="submit" class="btn btn-primary mt-2">Editar</button>
-        <a href="/dashboard/listar" class="btn btn-secondary mt-2">Voltar</a>
+        <button type="submit" class="btn btn-primary mt-2" name="op" value="editar">
+          Editar
+        </button>
+        <a href="/dashboard/listar" class="btn btn-secondary mt-2">
+          Voltar
+        </a>
       </div>
     </div>
   </form>

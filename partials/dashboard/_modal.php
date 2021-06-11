@@ -10,10 +10,16 @@
           Deseja realmente excluir o produto <span class="text-danger"><?=$nomeProduto?></span>?
         </div>
         <div class="modal-footer">
-          <form method="POST" action="../../src/utils/product.php">
-            <button type="submit" class="btn btn-danger" name="excluir" value="<?=$idProduto?>">Excluir</button>
+          <form method="POST" action="../../src/utils/productOperations.php">
+            <input type="hidden" name="id" value="<?=$idProduto?>" />
+            <button type="submit" class="btn btn-danger" name="op" value="excluir" >
+              Excluir
+            </button>
           </form>
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+            Cancelar
+          </button>
         </div>
       </div>
     </div>
