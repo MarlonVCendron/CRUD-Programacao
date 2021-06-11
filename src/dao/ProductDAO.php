@@ -10,31 +10,16 @@ class ProductDAO {
     public function add(Product $product) {
         $db = Database::getConnection();
         
-        $stmt = $db->prepare("INSERT INTO products (email, password) values (:email, :password)");
+        $stmt = $db->prepare("INSERT INTO products (name, price, stock, provider, shelf) values (:name, :price, :stock, :provider, :shelf)");
 
         $stmt->execute(array(
-            ':email' => $product->getNome(),
-            ':password' => $product->getPassword()
+            ':name' => $product->getName(),
+            ':price' => $product->getPrice(),
+            ':stock' => $product->getStock(),
+            ':provider' => $product->getProvider(),
+            ':shelf' => $product->getShelf()
         ));
 
         return $stmt->rowCount();
-    }
-
-    public function validate($email, $password) {
-        $db = Database::getConnection();
-        
-        $stmt = $db->prepare("SELECT * FROM products WHERE email = :email");
-
-        $stmt->execute(array(
-            ':email' => $email
-        ));
-
-        $row = $stmt->fetch();
-
-        if (password_verify($password, $row['password'])) {
-            return true;
-        } else {
-            return false;
-        }
     }
 }
