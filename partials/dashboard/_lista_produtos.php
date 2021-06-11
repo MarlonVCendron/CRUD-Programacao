@@ -36,7 +36,7 @@
           
           <?php modalExcluir($produto->getId(), $produto->getName()); ?>
 
-          <button class="btn btn-info">Editar</button>
+          <a href="http://<?=$_SERVER['HTTP_HOST']?>/dashboard/editar?id=<?=$produto->getId()?>" class="btn btn-info">Editar</button>
         </td>
       </tr>
       <?php } ?>

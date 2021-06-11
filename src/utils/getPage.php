@@ -1,5 +1,6 @@
 <?php
-switch ($_SERVER["REQUEST_URI"]) {
+$url = parse_url($_SERVER["REQUEST_URI"], PHP_URL_PATH);
+switch ($url) {
   case "":
   case "/":
   case "/index.php":
@@ -23,6 +24,12 @@ switch ($_SERVER["REQUEST_URI"]) {
   case "/dashboard/listar.php":
     $page = "partials/dashboard/_lista_produtos.php";
     $title = "Lista de Produtos";
+    $restricted = true;
+    break;
+  case "/dashboard/editar":
+  case "/dashboard/editar.php":
+    $page = "partials/dashboard/_editar_produto.php";
+    $title = "Editar Produto";
     $restricted = true;
     break;
   default:
