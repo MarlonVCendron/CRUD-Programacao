@@ -24,7 +24,7 @@ class ProductDAO{
   public function edit(Product $product){
     $db = Database::getConnection();
 
-    $stmt = $db->prepare("UPDATE products SET name=:name, price=:price, stock=:stock, provider:provider, shelf:shelf) WHERE id=:id");
+    $stmt = $db->prepare("UPDATE products SET name=:name, price=:price, stock=:stock, provider=:provider, shelf=:shelf WHERE id=:id");
 
     $stmt->execute(array(
       ':name' => $product->getName(),
@@ -56,10 +56,13 @@ class ProductDAO{
     $stmt = $db->prepare("SELECT * FROM products");
 
     $stmt->execute();
+    
+    $result = [];
+    while ($row = $stmt->fetch()) {
+      array_push($result, $row);
+    }
 
-    $row = $stmt->fetch();
-
-    return $row;
+    return $result;
   }
 }
 ?>
