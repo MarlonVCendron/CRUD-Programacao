@@ -9,11 +9,11 @@ CREATE TABLE `users` (
 CREATE TABLE `products` (
   `id` int NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
-  `price` varchar(255) NOT NULL,
+  `price` DECIMAL NOT NULL,
   `stock` INT NOT NULL,
   `provider` varchar(255) NOT NULL,
   `shelf` varchar(255),
   PRIMARY KEY (`id`),
-  UNIQUE KEY `email_UNIQUE` (`email`)
+  UNIQUE KEY `name_UNIQUE` (`name`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1;
 
