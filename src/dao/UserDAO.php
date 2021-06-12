@@ -5,36 +5,37 @@ namespace App\dao;
 use App\entities\User;
 use App\utils\Database;
 
-class UserDAO {
+class UserDAO{
 
-    public function add(User $user) {
-        $db = Database::getConnection();
-        
-        $stmt = $db->prepare("INSERT INTO users (email, password) values (:email, :password)");
+  public function add(User $user)  {
+    $db = Database::getConnection();
 
-        $stmt->execute(array(
-            ':email' => $user->getEmail(),
-            ':password' => $user->getPassword()
-        ));
+    $stmt = $db->prepare("INSERT INTO users (email, password) values (:email, :password)");
 
-        return $stmt->rowCount();
+    $stmt->execute(array(
+      ':email' => $user->getEmail(),
+      ':password' => $user->getPassword()
+    ));
+
+    return $stmt->rowCount();
+  }
+
+  public function validate($email, $password){
+    $db = Database::getConnection();
+
+    $stmt = $db->prepare("SELECT * FROM users WHERE email = :email");
+
+    $stmt->execute(array(
+      ':email' => $email
+    ));
+
+    $row = $stmt->fetch();
+
+    if (password_verify($password, $row['password'])) {
+      return true;
+    } else {
+      return false;
     }
-
-    public function validate($email, $password) {
-        $db = Database::getConnection();
-        
-        $stmt = $db->prepare("SELECT * FROM users WHERE email = :email");
-
-        $stmt->execute(array(
-            ':email' => $email
-        ));
-
-        $row = $stmt->fetch();
-
-        if (password_verify($password, $row['password'])) {
-            return true;
-        } else {
-            return false;
-        }
-    }
+  }
 }
+?>
