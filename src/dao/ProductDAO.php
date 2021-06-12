@@ -49,5 +49,17 @@ class ProductDAO{
 
     return $stmt->rowCount();
   }
+
+  public function getAll() {
+    $db = Database::getConnection();
+    
+    $stmt = $db->prepare("SELECT * FROM products");
+
+    $stmt->execute();
+
+    $row = $stmt->fetch();
+
+    return $row;
+  }
 }
 ?>
