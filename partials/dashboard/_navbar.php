@@ -20,7 +20,7 @@
       <span class="navbar-text px-2">Usuário: <?= $_SESSION["email"]?></span>
 
       <div>
-        <form action="../../src/utils/logout.php" method="POST">
+        <form action="../../src/forms/logout.php" method="POST">
           <input type="submit" name="logout" value="Sair" class="btn btn-danger" />
         </form>
       </div>
