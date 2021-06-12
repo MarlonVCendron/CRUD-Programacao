@@ -5,7 +5,7 @@ namespace App\utils;
 class FlashMessage {
     
     public const INFO = 'info';
-    public const ERRO = 'danger'; 
+    public const ERROR = 'danger'; 
     public const WARNING = 'warning';
     public const SUCCESS = 'success';
 

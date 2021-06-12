@@ -1,19 +1,9 @@
-<?php 
-  $info = $_SESSION["info"] ?? null;
-  unset($_SESSION["info"]);
+<?php
+use App\utils\FlashMessage;
 
-  $error = $_SESSION["error"] ?? null;
-  unset($_SESSION["error"]);
+echo FlashMessage::getMessage(FlashMessage::INFO);
+echo FlashMessage::getMessage(FlashMessage::ERROR);
+echo FlashMessage::getMessage(FlashMessage::WARNING);
+echo FlashMessage::getMessage(FlashMessage::SUCCESS); 
+
 ?>
-
-<?php if ($info): ?>
-  <div class="alert alert-success">
-    <?php echo $info; ?>
-  </div>
-<?php endif ?>
-
-<?php if ($error): ?>
-  <div class="alert alert-danger">
-    <?php echo $error; ?>
-  </div>
-<?php endif ?>

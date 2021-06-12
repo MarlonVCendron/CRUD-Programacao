@@ -2,11 +2,12 @@
 
 namespace App\utils;
 use App\utils\Utils;
+use App\utils\FlashMessage;
 
 if ($restricted) {
   if (!Utils::isLoggedIn()) {
     http_response_code(404);
-    $_SESSION["error"] = "Você não tem acesso a essa página.";
+    FlashMessage::setMessage(FlashMessage::ERROR, "Você não tem acesso a essa página.");
     header("Location: http://$_SERVER[HTTP_HOST]/");
   }
 }

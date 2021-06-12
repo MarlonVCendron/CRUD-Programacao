@@ -3,6 +3,7 @@
 require __DIR__ . '/../../vendor/autoload.php';
 
 use App\entities\User;
+use App\utils\FlashMessage;
 
 session_start(); 
 
@@ -13,9 +14,9 @@ $user = new User($email, $password);
 
 if($user->validate()){
   $_SESSION["email"] = $email;
-  $_SESSION["info"] = "Login efetuado com sucesso";
+  FlashMessage::setMessage(FlashMessage::SUCCESS, "Login efetuado com sucesso");
 }else{
-  $_SESSION["error"] = "Email ou senha incorretos";
+  FlashMessage::setMessage(FlashMessage::ERROR, "Email ou senha incorretos");
 }
 
 header("Location: http://$_SERVER[HTTP_HOST]/");
