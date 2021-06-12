@@ -1,7 +1,8 @@
 <?php
 
-require_once(__DIR__."/../utils/Database.php");
-require_once(__DIR__."/../entities/Product.php");
+namespace App\dao;
+use App\utils\Database;
+use App\entities\Product;
 
 class ProductDAO{
   public function add(Product $product){

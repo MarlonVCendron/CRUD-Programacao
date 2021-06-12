@@ -1,5 +1,7 @@
 <?php
 
+namespace App\entities;
+
 class Product {
   private $id;
   private $name;

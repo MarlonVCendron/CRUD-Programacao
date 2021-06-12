@@ -2,7 +2,7 @@
 <?php require_once(__DIR__."/_campos_form_produto.php") ?>
 
 <div class="container mt-4">
-  <form method="POST" action="../../../src/utils/productOperations.php">
+  <form method="POST" action="../../../src/forms/productOperations.php">
     <legend>Criar produto</legend>
 
     <?php formProduto() ?>

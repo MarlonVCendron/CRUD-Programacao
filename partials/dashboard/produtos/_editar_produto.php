@@ -1,6 +1,7 @@
-<?php require_once(__DIR__."/../_navbar.php") ?>
-<?php require_once(__DIR__."/_campos_form_produto.php") ?>
 <?php
+require_once(__DIR__."/../_navbar.php");
+require_once(__DIR__."/_campos_form_produto.php");
+
 $id = $_GET['id'];
 
 //
@@ -15,7 +16,7 @@ $estante="teste";
 ?>
 
 <div class="container mt-4">
-  <form method="POST" action="../../src/utils/productOperations.php">
+  <form method="POST" action="../../src/forms/productOperations.php">
     <legend>Editar produto de ID <?=$id?></legend>
 
     <?php formProduto($nome, $preco, $estoque, $fornecedor, $estante) ?>

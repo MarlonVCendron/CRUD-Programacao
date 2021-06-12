@@ -1,8 +1,10 @@
 <?php
-  require_once(__DIR__."/../src/utils/isLoggedIn.php");
-  if (isLoggedIn()) {
-    header("Location: http://$_SERVER[HTTP_HOST]/dashboard");
-  }
+
+use App\utils\Utils;
+
+if (Utils::isLoggedIn()) {
+  header("Location: http://$_SERVER[HTTP_HOST]/dashboard");
+}
 ?>
 
 <div class="container">

@@ -1,6 +1,8 @@
-<?php require_once(__DIR__."/../_navbar.php") ?>
-<?php require_once(__DIR__."/_modal_excluir.php") ?>
-<?php require_once(__DIR__."/../../../src/entities/Product.php") ?>
+<?php
+require_once(__DIR__."/../_navbar.php");
+require_once(__DIR__."/_modal_excluir.php");
+use App\entities\Product;
+?>
 
 <?php
   $produtos = [
