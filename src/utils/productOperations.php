@@ -1,5 +1,8 @@
 <?php
   require_once(__DIR__."/../../src/entities/Product.php");
+  require_once(__DIR__."/../../src/dao/ProductDAO.php");
+
+  $productDao = new ProductDAO;
 
   $op = $_REQUEST["op"] ?? null;
   $id = $_REQUEST["id"] ?? null;
@@ -11,15 +14,15 @@
     $fornecedor = $_REQUEST["fornecedor"] ?? null;
     $estante = $_REQUEST["estante"] ?? null;
 
-    new Product($id, $nome, $preco, $estoque, $fornecedor, $estante);
+    $product = new Product($id, $nome, $preco, $estoque, $fornecedor, $estante);
 
     if ($op == "criar") {
-      // Criar
+      $productDao->add($product);
     }else{
-      // Editar
+      $productDao->edit($product);
     }
   }else if($op == "excluir"){
-    // Excluir
+    $productDao->delete($id);
   }else{
     echo "erro";
   }
