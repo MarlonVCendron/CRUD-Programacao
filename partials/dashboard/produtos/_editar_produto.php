@@ -1,4 +1,4 @@
-<?php require_once(__DIR__."/_navbar.php") ?>
+<?php require_once(__DIR__."/../_navbar.php") ?>
 <?php require_once(__DIR__."/_campos_form_produto.php") ?>
 <?php
 $id = $_GET['id'];

@@ -1,7 +1,5 @@
 <?php
 
-namespace App\utils;
-
 class FlashMessage {
     
     public const INFO = 'info';

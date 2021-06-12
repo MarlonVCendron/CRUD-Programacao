@@ -1,9 +1,7 @@
 <?php
 
-namespace App\dao;
-
-use App\entities\Product;
-use App\utils\Database;
+require_once(__DIR__."/../utils/Database.php");
+require_once(__DIR__."/../entities/Product.php");
 
 class ProductDAO {
 

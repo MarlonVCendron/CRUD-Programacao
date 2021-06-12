@@ -1,12 +1,12 @@
-<?php require_once(__DIR__."/_navbar.php") ?>
-<?php require_once(__DIR__."/_modal.php") ?>
-<?php require_once(__DIR__."/../../src/entities/Product.php") ?>
+<?php require_once(__DIR__."/../_navbar.php") ?>
+<?php require_once(__DIR__."/_modal_excluir.php") ?>
+<?php require_once(__DIR__."/../../../src/entities/Product.php") ?>
 
 <?php
   $produtos = [
-    new Product(1, "Arroz", 5, "312"),
-    new Product(2, "Coiso", 12, "21"),
-    new Product(3, "Outro coiso", 7, "123")
+    new Product(1, "Arroz", 5, 312, "312", "312"),
+    new Product(2, "Coiso", 12, "21", "312", "312"),
+    new Product(3, "Outro coiso", 7, "123", "312", "312")
   ];
 ?>
 
@@ -19,6 +19,8 @@
       <th scope="col">Nome</th>
       <th scope="col">Preço</th>
       <th scope="col">Estoque</th>
+      <th scope="col">Fornecedor</th>
+      <th scope="col">Estante</th>
       <th scope="col"></th>
       </tr>
     </thead>
@@ -29,14 +31,17 @@
         <td><?= $produto->getName() ?></td>
         <td><?= $produto->getPrice() ?></td>
         <td><?= $produto->getStock() ?></td>
+        <td><?= $produto->getProvider() ?></td>
+        <td><?= $produto->getShelf() ?></td>
         <td>
+          <?php modalExcluir($produto->getId(), $produto->getName()); ?>
+
           <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modalExcluir<?=$produto->getId()?>">
             Excluir
           </button>
-          
-          <?php modalExcluir($produto->getId(), $produto->getName()); ?>
-
-          <a href="http://<?=$_SERVER['HTTP_HOST']?>/dashboard/editar?id=<?=$produto->getId()?>" class="btn btn-info">Editar</button>
+          <a href="http://<?=$_SERVER['HTTP_HOST']?>/dashboard/editar?id=<?=$produto->getId()?>" class="btn btn-info">
+            Editar
+          </a>
         </td>
       </tr>
       <?php } ?>
