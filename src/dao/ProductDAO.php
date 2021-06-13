@@ -64,5 +64,19 @@ class ProductDAO{
 
     return $result;
   }
+
+  public function getById($id) {
+    $db = Database::getConnection();
+    
+    $stmt = $db->prepare("SELECT * FROM products WHERE id=:id");
+
+    $stmt->execute(array(
+      ':id' => $id
+    ));
+    
+    $row = $stmt->fetch();
+
+    return $row;
+  }
 }
 ?>

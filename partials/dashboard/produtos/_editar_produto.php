@@ -1,25 +1,19 @@
 <?php
 require_once(__DIR__."/../_navbar.php");
 require_once(__DIR__."/_campos_form_produto.php");
+use App\dao\ProductDAO;
 
 $id = $_GET['id'];
 
-//
-// Pegar os dados do banco 
-//
-
-$nome="teste";
-$preco="2";
-$estoque="3";
-$fornecedor="teste";
-$estante="teste";
+$productDao = new ProductDAO;
+$produto = $productDao->getById($id);
 ?>
 
 <div class="container mt-4">
   <form method="POST" action="../../src/forms/productOperations.php">
     <legend>Editar produto de ID <?=$id?></legend>
 
-    <?php formProduto($nome, $preco, $estoque, $fornecedor, $estante) ?>
+    <?php formProduto($produto["name"], $produto["price"], $produto["stock"], $produto["provider"], $produto["shelf"]) ?>
     <input type="hidden" name="id" value="<?=$id?>" />
 
     <div class="row">

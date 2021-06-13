@@ -2,7 +2,6 @@
 require __DIR__ . '/../../../vendor/autoload.php';
 require_once(__DIR__."/../_navbar.php");
 require_once(__DIR__."/_modal_excluir.php");
-use App\entities\Product;
 use App\dao\ProductDAO;
 
 $productDao = new ProductDAO;
