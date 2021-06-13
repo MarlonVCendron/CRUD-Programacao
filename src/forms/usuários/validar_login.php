@@ -1,8 +1,8 @@
 <?php 
 
-require __DIR__ . '/../../vendor/autoload.php';
+require __DIR__ . '/../../../vendor/autoload.php';
 
-use App\entities\User;
+use App\dao\UserDAO;
 use App\utils\FlashMessage;
 
 session_start(); 
@@ -10,9 +10,9 @@ session_start();
 $email = $_REQUEST["email"] ?? null;
 $password = $_REQUEST["password"] ?? null;
 
-$user = new User($email, $password);
+$userDao = new UserDAO;
 
-if($user->validate()){
+if($userDao->validate($email, $password)){
   $_SESSION["email"] = $email;
   FlashMessage::setMessage(FlashMessage::SUCCESS, "Login efetuado com sucesso");
 }else{
