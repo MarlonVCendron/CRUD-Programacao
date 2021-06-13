@@ -15,6 +15,7 @@ switch ($url) {
     $title = "Dashboard";
     $restricted = true;
     break;
+  // PRODUTO
   case "/dashboard/criar_produto":
   case "/dashboard/criar_produto.php":
     $page = "partials/dashboard/produtos/_criar_produto.php";
@@ -33,11 +34,31 @@ switch ($url) {
     $title = "Editar Produto";
     $restricted = true;
     break;
+  // FORNECEDOR
+  case "/dashboard/criar_fornecedor":
+  case "/dashboard/criar_fornecedor.php":
+    $page = "partials/dashboard/fornecedores/_criar_fornecedor.php";
+    $title = "Criar Fornecedor";
+    $restricted = true;
+    break;
+  case "/dashboard/listar_fornecedor":
+  case "/dashboard/listar_fornecedor.php":
+    $page = "partials/dashboard/fornecedores/_lista_fornecedores.php";
+    $title = "Lista de Fornecedores";
+    $restricted = true;
+    break;
+  case "/dashboard/editar_fornecedor":
+  case "/dashboard/editar_fornecedor.php":
+    $page = "partials/dashboard/fornecedores/_editar_fornecedor.php";
+    $title = "Editar Fornecedor";
+    $restricted = true;
+    break;
+  // USUÁRIO
   case "/dashboard/registrar":
   case "/dashboard/registrar.php":
     $page = "partials/dashboard/usuários/_registrar.php";
     $title = "Registrar usuário";
-    $restricted = false;
+    $restricted = true;
     break;
   default:
     $page = "partials/_404.php";
