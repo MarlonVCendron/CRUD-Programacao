@@ -2,18 +2,22 @@
 require_once(__DIR__."/../_navbar.php");
 require_once(__DIR__."/_campos_form_produto.php");
 use App\dao\ProductDAO;
+use App\dao\ProviderDAO;
 
 $id = $_GET['id'];
 
 $productDao = new ProductDAO;
+$providerDao = new ProviderDAO;
+
 $produto = $productDao->getById($id);
+$nomeFornecedor = $providerDao->getById($produto["provider"])["name"];
 ?>
 
 <div class="container mt-4">
   <form method="POST" action="../../src/forms/produtos/editar.php">
     <legend>Editar produto de ID <?=$id?></legend>
 
-    <?php $formProduto($produto["name"], $produto["price"], $produto["stock"], $produto["provider"], $produto["shelf"]) ?>
+    <?php $formProduto($produto["name"], $produto["price"], $produto["stock"], $nomeFornecedor, $produto["shelf"]) ?>
 
     <div class="row">
       <div class="col">

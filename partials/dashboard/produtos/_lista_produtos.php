@@ -3,8 +3,10 @@ require __DIR__ . '/../../../vendor/autoload.php';
 require_once(__DIR__."/../_navbar.php");
 require_once(__DIR__."/_modal_excluir.php");
 use App\dao\ProductDAO;
+use App\dao\ProviderDAO;
 
 $productDao = new ProductDAO;
+$providerDao = new ProviderDAO;
 $produtos = $productDao->getAll();
 ?>
 
@@ -22,13 +24,16 @@ $produtos = $productDao->getAll();
       </tr>
     </thead>
     <tbody>
-      <?php foreach ($produtos as $produto) { ?>
+      <?php
+        foreach ($produtos as $produto) {
+          $nomeFornecedor = $providerDao->getById($produto["provider"])["name"];
+      ?>
       <tr>
         <th scope="row"><?= $produto["id"] ?></th>
         <td><?= $produto["name"]?></td>
         <td><?= $produto["price"]?></td>
         <td><?= $produto["stock"]?></td>
-        <td><?= $produto["provider"]?></td>
+        <td><?= $nomeFornecedor?></td>
         <td><?= $produto["shelf"]?></td>
         <td>
           <?php modalExcluir($produto["id"], $produto["name"]); ?>
