@@ -13,7 +13,7 @@ $produto = $productDao->getById($id);
   <form method="POST" action="../../src/forms/produtos/editar.php">
     <legend>Editar produto de ID <?=$id?></legend>
 
-    <?php formProduto($produto["name"], $produto["price"], $produto["stock"], $produto["provider"], $produto["shelf"]) ?>
+    <?php $formProduto($produto["name"], $produto["price"], $produto["stock"], $produto["provider"], $produto["shelf"]) ?>
 
     <div class="row">
       <div class="col">

@@ -5,7 +5,7 @@
   <form method="POST" action="../../../src/forms/produtos/criar.php">
     <legend>Criar produto</legend>
 
-    <?php formProduto() ?>
+    <?php $formProduto() ?>
 
     <div class="row">
       <div class="col">

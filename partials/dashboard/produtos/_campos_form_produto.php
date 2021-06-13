@@ -1,4 +1,12 @@
-<?php function formProduto($nome="", $preco="", $estoque="", $fornecedor="", $estante=""){ ?>
+<?php
+require __DIR__ . '/../../../vendor/autoload.php';
+use App\dao\ProviderDAO;
+
+$providerDao = new ProviderDAO;
+$fornecedores = $providerDao->getAll();
+?>
+
+<?php $formProduto = function($nome="", $preco="", $estoque="", $nomeFornecedor="", $estante="") use ($fornecedores) {?>
 <div class="row">
   <div class="col-4">
     <div class="form-group">
@@ -21,7 +29,17 @@
   <div class="col-4">
     <div class="form-group">
       <label for="fornecedor">Fornecedor</label>
-      <input type="text" name="fornecedor" id="fornecedor" class="form-control" value="<?=$fornecedor?>" required />
+
+      <select class="form-select" name="fornecedor" id="fornecedor" required>
+        <option value=""></option>
+        <?php foreach ($fornecedores as $fornecedor) { ?>
+          <option
+            value="<?=$fornecedor["id"]?>"
+            <?php echo ($fornecedor["name"] == $nomeFornecedor ? "selected" : "");?>>
+              <?=$fornecedor["name"]?>
+          </option>
+        <?php } ?>
+      </select>
     </div>
   </div>
   <div class="col-4">
