@@ -13,7 +13,7 @@ $fornecedor = $providerDao->getById($id);
   <form method="POST" action="../../src/forms/fornecedores/editar.php">
     <legend>Editar fornecedor de ID <?=$id?></legend>
 
-    <?php formFornecedor($fornecedor["name"], $fornecedor["price"], $fornecedor["stock"], $fornecedor["provider"], $fornecedor["shelf"]) ?>
+    <?php formFornecedor($fornecedor["name"], $fornecedor["cnpj"], $fornecedor["address"], $fornecedor["city"], $fornecedor["state"]) ?>
 
     <div class="row">
       <div class="col">

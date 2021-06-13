@@ -2,10 +2,10 @@
 require __DIR__ . '/../../../vendor/autoload.php';
 require_once(__DIR__."/../_navbar.php");
 require_once(__DIR__."/_modal_excluir.php");
-// use App\dao\ProviderDAO;
+use App\dao\ProviderDAO;
 
-// $providerDao = new ProviderDAO;
-// $fornecedores = $providerDao->getAll();
+$providerDao = new ProviderDAO;
+$fornecedores = $providerDao->getAll();
 ?>
 
 <div class="container mt-4">
