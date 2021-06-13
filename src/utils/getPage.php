@@ -33,6 +33,12 @@ switch ($url) {
     $title = "Editar Produto";
     $restricted = true;
     break;
+  case "/dashboard/registrar":
+  case "/dashboard/registrar.php":
+    $page = "partials/dashboard/usuários/_registrar.php";
+    $title = "Registrar usuário";
+    $restricted = false;
+    break;
   default:
     $page = "partials/_404.php";
     $title = "Erro 404";
