@@ -2,10 +2,10 @@
 require __DIR__ . '/../../../vendor/autoload.php';
 require_once(__DIR__."/../_navbar.php");
 require_once(__DIR__."/_modal_excluir.php");
-use App\dao\ProductDAO;
+// use App\dao\ProviderDAO;
 
-$productDao = new ProductDAO;
-$produtos = $productDao->getAll();
+// $providerDao = new ProviderDAO;
+// $fornecedores = $providerDao->getAll();
 ?>
 
 <div class="container mt-4">
@@ -14,29 +14,29 @@ $produtos = $productDao->getAll();
       <tr>
       <th scope="col">#</th>
       <th scope="col">Nome</th>
-      <th scope="col">Preço</th>
-      <th scope="col">Estoque</th>
-      <th scope="col">Fornecedor</th>
-      <th scope="col">Estante</th>
+      <th scope="col">CNPJ</th>
+      <th scope="col">Endereço</th>
+      <th scope="col">Cidade</th>
+      <th scope="col">Estado</th>
       <th scope="col"></th>
       </tr>
     </thead>
     <tbody>
-      <?php foreach ($produtos as $produto) { ?>
+      <?php foreach ($fornecedores as $fornecedor) { ?>
       <tr>
-        <th scope="row"><?= $produto["id"] ?></th>
-        <td><?= $produto["name"]?></td>
-        <td><?= $produto["price"]?></td>
-        <td><?= $produto["stock"]?></td>
-        <td><?= $produto["provider"]?></td>
-        <td><?= $produto["shelf"]?></td>
+        <th scope="row"><?= $fornecedor["id"] ?></th>
+        <td><?= $fornecedor["name"]?></td>
+        <td><?= $fornecedor["cnpj"]?></td>
+        <td><?= $fornecedor["address"]?></td>
+        <td><?= $fornecedor["city"]?></td>
+        <td><?= $fornecedor["state"]?></td>
         <td>
-          <?php modalExcluir($produto["id"], $produto["name"]); ?>
+          <?php modalExcluir($fornecedor["id"], $fornecedor["name"]); ?>
 
-          <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modalExcluir<?=$produto["id"]?>">
+          <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modalExcluir<?=$fornecedor["id"]?>">
             Excluir
           </button>
-          <a href="http://<?=$_SERVER['HTTP_HOST']?>/dashboard/editar_produto?id=<?=$produto["id"]?>" class="btn btn-info">
+          <a href="http://<?=$_SERVER['HTTP_HOST']?>/dashboard/editar_fornecedor?id=<?=$fornecedor["id"]?>" class="btn btn-info">
             Editar
           </a>
         </td>
@@ -49,8 +49,8 @@ $produtos = $productDao->getAll();
     <a href="/dashboard" class="btn btn-secondary mt-2">
       Voltar
     </a>
-    <a href="/dashboard/criar_produto" class="btn btn-outline-success mt-2 ms-2">
-      Criar produto
+    <a href="/dashboard/criar_fornecedor" class="btn btn-outline-success mt-2 ms-2">
+      Criar fornecedor
     </a>
   </div>
 </div>
