@@ -11,6 +11,11 @@
           </a>
         </li>
         <li class="nav-item">
+          <a href="/dashboard/listar_fornecedor" class="nav-link">
+            Fornecedores
+          </a>
+        </li>
+        <li class="nav-item">
           <a href="/dashboard/registrar" class="nav-link">
             Registrar usuário
           </a>

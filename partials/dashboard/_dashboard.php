@@ -7,6 +7,9 @@
     <a href="/dashboard/listar_produto" class="btn btn-lg btn-outline-primary">
       Produtos
     </a>
+    <a href="/dashboard/listar_fornecedor" class="btn btn-lg btn-outline-primary ms-2">
+      Fornecedores
+    </a>
     <a href="/dashboard/registrar" class="btn btn-lg btn-outline-primary ms-2">
       Registrar usuário
     </a>
