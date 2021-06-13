@@ -9,7 +9,7 @@
 
     <div class="row">
       <div class="col">
-        <button type="submit" class="btn btn-primary mt-2" name="op" value="criar">
+        <button type="submit" class="btn btn-primary mt-2">
           Criar
         </button>
         <a href="/dashboard" class="btn btn-secondary mt-2">
