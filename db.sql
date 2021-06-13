@@ -17,7 +17,7 @@ CREATE TABLE `products` (
   UNIQUE KEY `name_UNIQUE` (`name`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1;
 
-CREATE TABLE `provider` (
+CREATE TABLE `providers` (
   `id` int NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   `cnpj` varchar(255) NOT NULL,
