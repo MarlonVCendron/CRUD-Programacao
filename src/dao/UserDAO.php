@@ -31,11 +31,7 @@ class UserDAO{
 
     $row = $stmt->fetch();
 
-    if (password_verify($password, $row['password'])) {
-      return true;
-    } else {
-      return false;
-    }
+    return password_verify($password, $row['password']);
   }
 }
 ?>
