@@ -1,6 +1,6 @@
 <div class="row justify-content-center">
   <div class="col-12 col-sm-6">
-    <form method="POST" action="../src/forms/validateLogin.php">
+    <form method="POST" action="../src/forms/usuários/validar_login.php">
       <div class="form-group">
         <label for="email">Email</label>
         <input type="email" class="form-control" name="email" id="email" />
