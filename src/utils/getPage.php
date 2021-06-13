@@ -15,20 +15,20 @@ switch ($url) {
     $title = "Dashboard";
     $restricted = true;
     break;
-  case "/dashboard/criar":
-  case "/dashboard/criar.php":
+  case "/dashboard/criar_produto":
+  case "/dashboard/criar_produto.php":
     $page = "partials/dashboard/produtos/_criar_produto.php";
     $title = "Criar Produto";
     $restricted = true;
     break;
-  case "/dashboard/listar":
-  case "/dashboard/listar.php":
+  case "/dashboard/listar_produto":
+  case "/dashboard/listar_produto.php":
     $page = "partials/dashboard/produtos/_lista_produtos.php";
     $title = "Lista de Produtos";
     $restricted = true;
     break;
-  case "/dashboard/editar":
-  case "/dashboard/editar.php":
+  case "/dashboard/editar_produto":
+  case "/dashboard/editar_produto.php":
     $page = "partials/dashboard/produtos/_editar_produto.php";
     $title = "Editar Produto";
     $restricted = true;

@@ -4,7 +4,7 @@
   <h1>Dashboard</h1>
 
   <div class="d-flex">
-    <a href="/dashboard/listar" class="btn btn-lg btn-outline-primary">
+    <a href="/dashboard/listar_produto" class="btn btn-lg btn-outline-primary">
       Produtos
     </a>
     <a href="/dashboard/registrar" class="btn btn-lg btn-outline-primary ms-2">

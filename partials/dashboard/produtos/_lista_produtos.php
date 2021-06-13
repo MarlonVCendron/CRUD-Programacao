@@ -36,7 +36,7 @@ $produtos = $productDao->getAll();
           <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modalExcluir<?=$produto["id"]?>">
             Excluir
           </button>
-          <a href="http://<?=$_SERVER['HTTP_HOST']?>/dashboard/editar?id=<?=$produto["id"]?>" class="btn btn-info">
+          <a href="http://<?=$_SERVER['HTTP_HOST']?>/dashboard/editar_produto?id=<?=$produto["id"]?>" class="btn btn-info">
             Editar
           </a>
         </td>
@@ -49,7 +49,7 @@ $produtos = $productDao->getAll();
     <a href="/dashboard" class="btn btn-secondary mt-2">
       Voltar
     </a>
-    <a href="/dashboard/criar" class="btn btn-outline-success mt-2 ms-2">
+    <a href="/dashboard/criar_produto" class="btn btn-outline-success mt-2 ms-2">
       Criar produto
     </a>
   </div>

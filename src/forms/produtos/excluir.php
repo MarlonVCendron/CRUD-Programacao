@@ -17,6 +17,6 @@ if($retorno){
   FlashMessage::setMessage(FlashMessage::ERROR, "Ocorreu um erro!");
 }
 
-header("Location: http://$_SERVER[HTTP_HOST]/dashboard/listar");
+header("Location: http://$_SERVER[HTTP_HOST]/dashboard/listar_produto");
 
 ?>

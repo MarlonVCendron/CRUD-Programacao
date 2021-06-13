@@ -20,7 +20,7 @@ $produto = $productDao->getById($id);
         <button type="submit" class="btn btn-primary mt-2" name="id" value="<?=$id?>">
           Editar
         </button>
-        <a href="/dashboard/listar" class="btn btn-secondary mt-2">
+        <a href="/dashboard/listar_produto" class="btn btn-secondary mt-2">
           Voltar
         </a>
       </div>
