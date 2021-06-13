@@ -5,14 +5,8 @@
 
   <div class="row">
     <div class="col-6">
-      <a href="/dashboard/listar" class="h1 btn btn-outline-primary btn-dashboard">
-        Lista de produtos
-      </a>
-    </div>
-
-    <div class="col-6">
-      <a href="/dashboard/criar" class="btn btn-outline-primary btn-dashboard">
-        Criar produto
+      <a href="/dashboard/listar" class="h1 btn btn-outline-primary">
+      Produtos
       </a>
     </div>
   </div>

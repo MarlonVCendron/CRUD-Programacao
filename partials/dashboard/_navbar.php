@@ -7,12 +7,12 @@
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
           <a href="/dashboard/listar" class="nav-link">
-            Lista de produtos
+            Produtos
           </a>
         </li>
         <li class="nav-item">
-          <a href="/dashboard/criar" class="nav-link">
-            Criar produto
+          <a href="/dashboard/registrar" class="nav-link">
+            Registrar usuário
           </a>
         </li>
       </ul>

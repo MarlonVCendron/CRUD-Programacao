@@ -9,6 +9,11 @@ $produtos = $productDao->getAll();
 ?>
 
 <div class="container mt-4">
+  <div class="col-6">
+    <a href="/dashboard/criar" class="btn btn-outline-success">
+      Criar produto
+    </a>
+  </div>
 
   <table class="table">
     <thead>
