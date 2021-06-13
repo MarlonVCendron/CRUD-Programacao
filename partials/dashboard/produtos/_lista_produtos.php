@@ -9,12 +9,6 @@ $produtos = $productDao->getAll();
 ?>
 
 <div class="container mt-4">
-  <div class="col-6">
-    <a href="/dashboard/criar" class="btn btn-outline-success">
-      Criar produto
-    </a>
-  </div>
-
   <table class="table">
     <thead>
       <tr>
@@ -50,9 +44,13 @@ $produtos = $productDao->getAll();
       <?php } ?>
     </tbody>
   </table>
-  <div class="row">
-    <div class="col">
-      <a href="/dashboard" class="btn btn-secondary mt-2">Voltar</a>
-    </div>
+
+  <div class="d-flex">
+    <a href="/dashboard" class="btn btn-secondary mt-2">
+      Voltar
+    </a>
+    <a href="/dashboard/criar" class="btn btn-outline-success mt-2 ms-2">
+      Criar produto
+    </a>
   </div>
 </div>
