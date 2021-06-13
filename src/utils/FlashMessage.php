@@ -18,7 +18,7 @@ class FlashMessage {
     unset($_SESSION[$type]);
 
     if ($message) {
-      return "<div class='alert alert-{$type}'>{$message}</div>";
+      return "<div class='fixed-bottom mb-0 alert alert-{$type}'>{$message}</div>";
     } else {
       return;
     }
