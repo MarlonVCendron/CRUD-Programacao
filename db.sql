@@ -6,17 +6,6 @@ CREATE TABLE `users` (
   UNIQUE KEY `email_UNIQUE` (`email`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1;
 
-CREATE TABLE `products` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) NOT NULL,
-  `price` DECIMAL NOT NULL,
-  `stock` INT NOT NULL,
-  `provider` varchar(255) NOT NULL,
-  `shelf` varchar(255),
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `name_UNIQUE` (`name`)
-) ENGINE=InnoDB AUTO_INCREMENT=1;
-
 CREATE TABLE `providers` (
   `id` int NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
@@ -25,5 +14,17 @@ CREATE TABLE `providers` (
   `city` varchar(255) NOT NULL,
   `state` varchar(255) NOT NULL,
   PRIMARY KEY (`id`),
+  UNIQUE KEY `name_UNIQUE` (`name`)
+) ENGINE=InnoDB AUTO_INCREMENT=1;
+
+CREATE TABLE `products` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  `price` DECIMAL NOT NULL,
+  `stock` INT NOT NULL,
+  `provider` INT NOT NULL,
+  `shelf` varchar(255),
+  PRIMARY KEY (`id`),
+  FOREIGN KEY (`provider`) REFERENCES `providers`(`id`),
   UNIQUE KEY `name_UNIQUE` (`name`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1;
